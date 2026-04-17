@@ -37,6 +37,12 @@ Com base nos dados obtidos, selecione uma prática ou dado de teste relevante e 
 
 ## Respostas
 
-**1. Repositório selecionado:** `<URL_DO_REPOSITÓRIO_AQUI>`
+**1. Repositório selecionado:** `https://github.com/huggingface/smolagents`
 
-**2. Explicação:** `<SUA_EXPLICAÇÃO_AQUI>`
+**2. Explicação:** `Eu escolhi o repositório huggingface/smolagents porque ele é um projeto de agentes de IA que ja trabalhei e eu queria entender como esse tipo de sistema é validado na prática.
+
+Ao analisar os testes, uma prática que achei muito interessante foi testar não só o “caminho certo”, mas também falhas e limites de execução. Um exemplo é o teste test_fails_max_steps, que valida se o agente para corretamente quando atinge o número máximo de passos (max_steps) e registra o erro esperado (AgentMaxStepsError). Esse teste é importante porque agentes podem entrar em loops ou não chegar a uma resposta final, então ter esse controle aumenta a segurança e evita execuções infinitas.
+
+Outro teste que me chamou atenção foi o test_function_persistence_across_steps, que verifica se uma função definida em uma etapa continua disponível nas etapas seguintes. Isso é interessante porque mostra que os testes estão cobrindo o comportamento “multi-step” real do agente, e não apenas chamadas isoladas.
+
+No geral, eu percebi que o projeto usa testes para garantir robustez em cenários reais, ou seja, resposta correta, tratamento de erro, persistência de contexto e controle de execução. Isso passa mais confiança para manter e evoluir a biblioteca sem quebrar comportamentos importantes.`
